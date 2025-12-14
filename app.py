@@ -13,7 +13,7 @@ import pyperclip
 import sqlite3
 
 # -------- Groq API Setup --------
-openai.api_key = "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"
+openai.api_key = "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"
 openai.base_url = "https://api.groq.com/openai/v1"
 client = Groq(api_key=openai.api_key)
 
@@ -788,7 +788,7 @@ with col1:
 
 with col2:
     # Theme toggle button with appropriate icon based on current theme
-    theme_icon = "🌙" if st.session_state.theme == "light" else "☀️"
+    theme_icon = "🌙" if st.session_state.theme == "light" else "☀"
     theme_label = "Dark Mode" if st.session_state.theme == "light" else "Light Mode"
     
     if st.button(f"{theme_icon} {theme_label}", key="theme_toggle"):
@@ -835,10 +835,10 @@ with st.sidebar:
     
     with st.expander("⌨ Keyboard Shortcuts"):
         st.markdown("""
-        - *Save*: Ctrl+S
-        - *Find*: Ctrl+F
-        - *Replace*: Ctrl+H
-        - *Comment*: Ctrl+/
+        - Save: Ctrl+S
+        - Find: Ctrl+F
+        - Replace: Ctrl+H
+        - Comment: Ctrl+/
         """)
     
     st.markdown("---")
@@ -1211,7 +1211,7 @@ elif selected_nav == "Generator":
             ]
         }
         
-        st.markdown(f"*Example prompts for {language}:*")
+        st.markdown(f"Example prompts for {language}:")
         for example in example_prompts[language]:
             if st.button(example, key=f"example_{example[:20]}"):
                 st.session_state.prompt = example
@@ -1230,7 +1230,7 @@ elif selected_nav == "Settings":
     # About section
     with st.expander("ℹ About CodeForge"):
         st.markdown("""
-        *CodeForge* is an advanced AI-powered online code editor that combines:
+        CodeForge is an advanced AI-powered online code editor that combines:
         
         - Real-time code editing and execution using Judge0
         - AI code generation powered by Groq's LLama models
@@ -1238,8 +1238,8 @@ elif selected_nav == "Settings":
         
         Built with Streamlit and enhanced with custom styling to provide a professional development environment.
         
-        *Version:* 1.0.0  
-        *Last Updated:* April 2025
+        Version: 1.0.0  
+        Last Updated: April 2025
         """)
 # -------- ChatBot --------
 LABELS = {
@@ -1311,7 +1311,7 @@ if st.session_state.show_bot:
     with col2:
         error_clicked = st.button("🐞 Find Errors")
     with col3:
-        optimize_clicked = st.button("⚙️ Optimize Code")
+        optimize_clicked = st.button("⚙ Optimize Code")
 
     # Handle action button logic
     instruction = None
